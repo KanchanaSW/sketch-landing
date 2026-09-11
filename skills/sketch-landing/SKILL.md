@@ -86,6 +86,7 @@ If the user *did* supply a product, use their name, audience, and claims. Invent
 3. **Scaffold the project** with the tech defaults (or adapt to the existing repo). Add fonts, Tailwind tokens, the SVG filter, and the paper-grain overlay before any sections.
 4. **Build components section-by-section**, applying the visual style rules from [reference/style-guide.md](reference/style-guide.md). Shared primitives (`SketchFilter`, `SketchBox`, `SketchButton`, doodle icons) first, then sections.
 5. **Verify the hand-drawn effect is actually visible.** Check: wobble on borders, double-line buttons, handwriting headings, grain overlay, doodle icons, hover wiggle, scroll stagger. If it just looks like black-and-white Tailwind, it is not done — add the missing sketch layers.
+6. **Write `README.md` after the site is fully built.** Only after step 5 passes. This is a required output of every build, even if the user did not ask for docs. Document the site that actually exists (product, run commands, stack, sections, primitives). Replace a default Create Next App README. Do not declare the build done until this file is written.
 
 ## Output
 
@@ -95,6 +96,36 @@ Always a working Next.js project (or the adapted stack) with:
 - Shared sketch primitives in their own files
 - Page assembled in `app/page.tsx`
 - Global filter + grain mounted once in the root layout or page
+- `README.md` at the generated site's project root, written last
+
+### README (required, last)
+
+Write this after visual verification, using the real product name and files from this build — not a scaffold stub. This is the landing page's README, not documentation of the sketch-landing skill.
+
+```markdown
+# {Product}
+
+{One-line promise from the product read}
+
+## Run locally
+
+npm install
+npm run dev
+
+Open http://localhost:3000.
+
+## Stack
+
+{Actual stack used, e.g. Next.js 14 · TypeScript · Tailwind CSS · Framer Motion}
+
+## Page
+
+{Section list that actually shipped, in order}
+
+## Sketch primitives
+
+Where `SketchFilter`, `SketchBox`, `SketchButton`, doodle icons, and paper grain live.
+```
 
 ## Common mistakes (automatic fail)
 
@@ -108,3 +139,4 @@ Always a working Next.js project (or the adapted stack) with:
 | Hover = background fill / `scale-105` | 1–2° rotate wiggle |
 | Lorem ipsum / `[Feature Name]` | Invent a real product and write finished copy |
 | One giant `page.tsx` | One file per section |
+| No site README, or the leftover Create Next App README | Write the product README after visual verification |

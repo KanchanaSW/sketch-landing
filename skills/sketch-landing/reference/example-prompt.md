@@ -148,6 +148,7 @@ Studio lets you put your wordmark on the notebook. Sketchbook uses Margin's. Mos
 ## File map
 
 ```
+README.md             # written last, after visual verification — product, run, stack, sections
 app/
   layout.tsx          # Caveat + Inter, SketchFilter, PaperGrain, bg-paper
   page.tsx            # section assembly in default order

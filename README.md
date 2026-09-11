@@ -40,6 +40,7 @@ A working single-page marketing site with:
 - One component per section, assembled in `app/page.tsx`
 - Shared sketch primitives (`SketchFilter`, `SketchBox`, `SketchButton`, doodle icons)
 - Finished, product-specific copy (no lorem ipsum)
+- A `README.md` written after the site is fully built (how to run, stack, sections)
 
 Default section order: Nav → Hero → Logo strip → Features → How it works → Testimonials → Pricing → FAQ → Final CTA → Footer.
 
